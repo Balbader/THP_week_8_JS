@@ -11,7 +11,7 @@ const aminoTable = new Map([
 const aminoConversion = (code) => {
   for(const [amino, codes] of aminoTable) {
     if(codes.includes(code)){
-      console.log(amino);
+      return amino;
     }
   }
 };
