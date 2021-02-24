@@ -1,60 +1,49 @@
 /*const greeting = "Hello World";
 console.log(greeting);*/
 
-const entrepreneurs = [
-    { first: 'Steve', last: 'Jobs', year: 1955 },
-    { first: 'Oprah', last: 'Winfrey', year: 1954 },
-    { first: 'Bill', last: 'Gates', year: 1955 },
-    { first: 'Sheryl', last: 'Sandberg', year: 1969 },
-    { first: 'Mark', last: 'Zuckerberg', year: 1984 },
-    { first: 'Beyonce', last: 'Knowles', year: 1981 },
-    { first: 'Jeff', last: 'Bezos', year: 1964 },
-    { first: 'Diane', last: 'Hendricks', year: 1947 },
-    { first: 'Elon', last: 'Musk', year: 1971 },
-    { first: 'Marissa', last: 'Mayer', year: 1975 },
-    { first: 'Walt', last: 'Disney', year: 1901 },
-    { first: 'Larry', last: 'Page', year: 1973 },
-    { first: 'Jack', last: 'Dorsey', year: 1976 },
-    { first: 'Evan', last: 'Spiegel', year: 1990 },
-    { first: 'Brian', last: 'Chesky', year: 1981 },
-    { first: 'Travis', last: 'Kalanick', year: 1976 },
-    { first: 'Marc', last: 'Andreessen', year: 1971 },
-    { first: 'Peter', last: 'Thiel', year: 1967 }
-  ];
+const books = [
+  { title: 'Gatsby le magnifique', id: 133712, rented: 39 },
+  { title: 'A la recherche du temps perdu', id: 237634, rented: 28 },
+  { title: 'Orgueil & Préjugés', id: 873495, rented: 67 },
+  { title: 'Les frères Karamazov', id: 450911, rented: 55 },
+  { title: 'Dans les forêts de Sibérie', id: 8376365, rented: 15 },
+  { title: 'Pourquoi j\'ai mangé mon père', id: 450911, rented: 45 },
+  { title: 'Et on tuera tous les affreux', id: 67565, rented: 36 },
+  { title: 'Le meilleur des mondes', id: 88847, rented: 58 },
+  { title: 'La disparition', id: 364445, rented: 33 },
+  { title: 'La lune seule le sait', id: 63541, rented: 43 },
+  { title: 'Voyage au centre de la Terre', id: 4656388, rented: 38 },
+  { title: 'Les frères Karamazov', id: 450911, rented: 0 },
+  { title: 'Guerre et Paix', id: 748147, rented: 19 }
+];
 
-// Filter all entrepreneurs born in the 70's
-console.log("======= The 70's category =======");
-let oldSchoolBoss = entrepreneurs.filter(entrepreneurs => (entrepreneurs.year > 1969 && entrepreneurs.year < 1980));
-for(i = 0; i <= oldSchoolBoss.length; i++){
-    console.log(entrepreneurs[i].first + " " + entrepreneurs[i].last);
+console.log("QUESTION: Were all the books rented at least once?")
+for(i = 0; i < books.length; i++){
+  if (books[i]["rented"] > 1){
+    console.log(books[i]["title"] + " was rented at least once");
+  } else {
+    console.log("This book was never rented.");
+  }
+  // Use of ternary
+  //(books[i]["rented"] > 1) ? console.log(books[i]["title"] + " was rented at least once"):console.log("This book was never rented.");
 }
 
-// Sort an array that will filter the first name and last name of our entrepreneurs array
-console.log("======= Sort the first and last name of all entrepreneurs =======");
-let fullName = [];
-for(let i in entrepreneurs){
-  let temp = entrepreneurs[i].first + " " + entrepreneurs[i].last;
-  fullName.push(temp);
-  console.log(fullName[i]);
-}
+console.log("QUESTION: Which book was rented the most?");
+let rentedTheMost = "";
+let j = 0;
+books.forEach(book => {
+  if(book.rented > j){
+    j = book.rented;
+    rentedTheMost = book.title;
+  }
+});
+console.log(rentedTheMost);
 
-// Find the age of each entrepreneur age today
-console.log("======= Age in 2021 =======");
-for(let i in entrepreneurs){
-  console.log(entrepreneurs[i].first + " " + entrepreneurs[i].last + " would be " + (2021 - entrepreneurs[i].year) + " years old today!");
-}
 
-// Sort array in alphabetic order
-console.log("======= Sort array in alphabetic order =======");
-let namesInAlphabeticOrder = [];
-for(i = 0; i < entrepreneurs.length; i++){
-  let temp = entrepreneurs[i].last + " " + entrepreneurs[i].first;
-  namesInAlphabeticOrder.push(temp);
-}
+console.log("QUESTION: Which book was the least rented?");
+let rentedBooks = books.sort( (a, b) => {
+  return a.rented - b.rented;
+});
+console.log(rentedBooks[0].title)
 
-namesInAlphabeticOrder.sort();
-let name = [];
-for(let i in namesInAlphabeticOrder){
-  name = namesInAlphabeticOrder[i].split(" ");
-  console.log(name[1] + " " + name[0]);
-}
+console.log("QUESTION: Find the book with ID:873495");
