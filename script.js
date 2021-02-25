@@ -5,6 +5,7 @@ console.log(greeting);*/
 const aminoTable = new Map([
   ["Leucine", ["UUA", "UUG", "CUU", "CUC", "CUA", "CUG"]],
   ["Phenylalanine", ["UUU", "UUC"]],
+  ["Serine", ["UCU", "UCC", "UCA", "UCG", "AGU", "AGC"]]
 ]);
 
 // Function to translate from codon to amino
