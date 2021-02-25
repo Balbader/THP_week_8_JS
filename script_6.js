@@ -13,8 +13,6 @@ const aminoTable = new Map([
     for(const [amino, codes] of aminoTable) {
       if(codes.includes(code)){
         return amino;
-      } else {
-        return "Wrong entry please try again.";
       }
     }
   };
