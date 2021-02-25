@@ -13,7 +13,7 @@ const books = [
     { title: 'Les frères Karamazov', id: 450911, rented: 0 },
     { title: 'Guerre et Paix', id: 748147, rented: 19 }
   ];
-  
+
   console.log("QUESTION: Were all the books rented at least once?")
   for(i = 0; i < books.length; i++){
     if (books[i]["rented"] > 1){
@@ -24,7 +24,7 @@ const books = [
     // Use of ternary
     //(books[i]["rented"] > 1) ? console.log(books[i]["title"] + " was rented at least once"):console.log("This book was never rented.");
   }
-  
+
   console.log("QUESTION: Which book was rented the most?");
   let rentedTheMost = "";
   let j = 0;
@@ -35,24 +35,24 @@ const books = [
     }
   });
   console.log(rentedTheMost);
-  
+
   console.log("QUESTION: Which book was the least rented?");
   let rentedBooks = books.sort( (a, b) => {
     return a.rented - b.rented;
   });
   console.log(rentedBooks[0].title);
-  
+
   console.log("QUESTION: Find the book with ID:873495");
   let idBook = books.find(item => item.id === 873495);
   console.log(`The book with the ID: 873495 is ${idBook.title}`);
-  
+
   console.log("QUESTION: Delete the book with ID:133712 ");
   let deleteBooks = books.findIndex(item => item.id === 133712);
   if(deleteBooks > -1){
     books.splice(deleteBooks, 1);
   }
   console.log(books);
-  
+
   console.log("QUESTION: Sort books in alphabetical order");
   books.sort((a, b) => {
     return a.title > b.title;
