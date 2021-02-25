@@ -21,7 +21,6 @@ const aminoConversion = (code) => {
     }
   }
 };
-console.log(aminoConversion("UUA"));
 
 // Function to split the amino acid string into groups of 3 chars
 const translateRna = (rna) => {
@@ -34,7 +33,6 @@ const translateRna = (rna) => {
   }
   return arr;
 };
-console.log(translateRna("UUACGCAGUAGA"));
 
 // Translate the codon to protein
 const turnToProtein = (codToProt) => {

@@ -18,7 +18,6 @@ const aminoTable = new Map([
       }
     }
   };
-  console.log(aminoConversion("UUA"));
 
   // Function to split the amino acid string into groups of 3 chars
   const translateRna = (rna) => {
@@ -31,7 +30,6 @@ const aminoTable = new Map([
     }
     return arr;
   };
-  console.log(translateRna("UUACGCAGUAGA"));
 
   // Translate the codon to protein
   const turnToProtein = (codToProt) => {
