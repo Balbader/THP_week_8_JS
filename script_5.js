@@ -51,10 +51,10 @@ const books = [
   if(deleteBooks > -1){
     books.splice(deleteBooks, 1);
   }
-  console.log(books);
+  console.table(books);
 
   console.log("QUESTION: Sort books in alphabetical order");
   books.sort((a, b) => {
     return a.title > b.title;
   });
-  console.log(books);
+  console.table(books);
